@@ -9,11 +9,6 @@ use Inertia\Inertia;
 
 Route::prefix('admin/')->group(function (){
     Route::middleware('guest')->group(function () {
-        Route::get('register', [RegisteredAdminController::class, 'create'])
-            ->name('admin.register');
-
-        Route::post('register', [RegisteredAdminController::class, 'store']);
-
         Route::get('login', [AuthenticatedAdminSessionController::class, 'create'])
             ->name('admin.login');
 
